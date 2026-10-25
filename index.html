@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cleopatra's Trick</title>
+<meta name="description" content="Cleopatra's Trick: the sacred seduction ritual program, your guided rituals, 7-day challenge and bonuses.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Cleo Trick">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#0d0a06;--card:#15100a;--card2:#1c150c;--gold:#e2be6e;--gold2:#b8924a;--gold3:#f5dfa3;--lapis:#2a5aa8;--text:#f3e9d2;--mute:#b3a487;--line:rgba(226,190,110,.28);--ok:#7fcf9a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;line-height:1.5}
+body{min-height:100vh;padding-bottom:calc(86px + env(safe-area-inset-bottom));background:radial-gradient(ellipse at 50% -10%,#2a1d08 0,#000 55%) fixed}
+h1,h2,h3,.cz{font-family:'Cinzel',Georgia,serif;letter-spacing:.06em;font-weight:700;color:var(--gold)}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px}
+header .logo{width:34px;height:34px;flex:none}
+header .t{font-family:'Cinzel',serif;color:var(--gold);font-size:16px;letter-spacing:.14em;font-weight:700;line-height:1.1}
+header .s{font-size:13px;color:var(--mute);letter-spacing:.08em}
+header .back{margin-left:auto;background:none;border:1px solid var(--line);color:var(--gold);border-radius:20px;padding:6px 14px;font:600 14px 'Cinzel',serif;display:none}
+main{max-width:640px;margin:0 auto;padding:18px 16px}
+.hero{text-align:center;padding:26px 14px 22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#1a1308,#0a0704);position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;left:14px;right:14px;height:6px;background:repeating-linear-gradient(90deg,var(--gold2) 0 10px,transparent 10px 16px);opacity:.5}
+.hero:before{top:10px}.hero:after{bottom:10px}
+.hero h1{font-size:25px;margin:10px 0 6px}
+.hero p{margin:6px 0;color:var(--text)}
+.eye{width:74px;height:74px;margin:6px auto}
+.bar{height:8px;border-radius:5px;background:#2a2012;overflow:hidden;margin:14px 0 4px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold3));width:0;transition:width .5s}
+.small{font-size:15px;color:var(--mute)}
+.sec{font-family:'Cinzel',serif;color:var(--gold);letter-spacing:.14em;font-size:14px;margin:26px 2px 10px;text-transform:uppercase}
+.card{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;cursor:pointer;width:100%;text-align:left;color:var(--text);font:inherit}
+.card:active{transform:scale(.99);border-color:var(--gold)}
+.card .ic{flex:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);display:grid;place-items:center;font-size:24px;color:var(--gold);background:#0b0804}
+.card .tt{font-family:'Cinzel',serif;color:var(--gold3);font-size:16px;font-weight:700;letter-spacing:.04em;line-height:1.2}
+.card .sb{color:var(--mute);font-size:16px;line-height:1.25;margin-top:2px}
+.card .chk{margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:#000;font-size:15px}
+.card.done .chk{background:var(--ok);border-color:var(--ok)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:2px 10px;font-size:13px;color:var(--mute);letter-spacing:.06em;margin-right:6px}
+.box{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:16px;margin:14px 0}
+.box h3{margin:0 0 8px;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
+.note{border-left:3px solid var(--gold);background:#120d06;padding:12px 14px;margin:14px 0;border-radius:0 10px 10px 0;color:var(--text)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:12px 12px 12px 54px;margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#000;font:700 15px 'Cinzel',serif;display:grid;place-items:center}
+.steps b{display:block;color:var(--gold3);font-family:'Cinzel',serif;font-size:14px;letter-spacing:.06em;margin-bottom:2px}
+ul.tips{margin:6px 0;padding-left:22px}ul.tips li{margin:6px 0}
+.btn{display:block;width:100%;border:0;border-radius:30px;padding:15px;font:700 15px 'Cinzel',serif;letter-spacing:.12em;color:#1a1204;background:linear-gradient(180deg,var(--gold3),var(--gold2));margin:14px 0;cursor:pointer}
+.btn.alt{background:none;border:1px solid var(--gold2);color:var(--gold)}
+.btn.done{background:var(--ok)}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(0,0,0,.95);border-top:1px solid var(--line);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom));backdrop-filter:blur(8px)}
+nav button{flex:1;background:none;border:0;color:var(--mute);font:600 10px 'Cinzel',serif;letter-spacing:.03em;padding:6px 1px;cursor:pointer}
+nav button b{display:block;font-size:22px;line-height:1.2;font-family:serif;font-weight:400}
+nav button.on{color:var(--gold)}
+.day{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px;margin:10px 0}
+.day input{width:26px;height:26px;accent-color:var(--gold);flex:none;margin-top:4px}
+.day b{font-family:'Cinzel',serif;color:var(--gold3);font-size:14px;letter-spacing:.06em}
+textarea,input[type=text]{width:100%;background:#0b0804;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;padding:12px;resize:vertical}
+.entry{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:var(--card)}
+.entry .d{color:var(--gold);font:600 13px 'Cinzel',serif;letter-spacing:.08em}
+.entry button{background:none;border:0;color:var(--mute);float:right;font-size:14px}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.modal.on{display:flex}
+.ring{position:relative;width:230px;height:230px;margin:10px auto}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .tm{position:absolute;inset:0;display:grid;place-items:center;font:700 44px 'Cinzel',serif;color:var(--gold3)}
+.phase{font-size:21px;min-height:62px;max-width:420px;color:var(--text)}
+.foot{text-align:center;color:var(--mute);font-size:14px;margin:26px 0 8px}
+details{border:1px solid var(--line);border-radius:12px;background:var(--card);margin:10px 0;padding:0 14px}
+details summary{cursor:pointer;padding:14px 0;font:700 15px 'Cinzel',serif;color:var(--gold3);letter-spacing:.06em;list-style:none}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px}
+details p,details ol{margin:8px 0 14px}
+</style>
+</head>
+<body>
+<header>
+  <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#ankh"/></svg>
+  <div><div class="t">CLEOPATRA'S TRICK</div><div class="s">THE SACRED RITUAL</div></div>
+  <button class="back" id="back">&larr; BACK</button>
+</header>
+<main id="app"></main>
+<nav id="nav"></nav>
+
+<div class="modal" id="timer">
+  <div class="cz" id="tmTitle" style="font-size:18px;letter-spacing:.14em"></div>
+  <div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="#2a2012" stroke-width="4"/><circle id="tmArc" cx="50" cy="50" r="45" fill="none" stroke="#e2be6e" stroke-width="4" stroke-linecap="round" stroke-dasharray="282.7" stroke-dashoffset="0"/></svg><div class="tm" id="tmTime">0:00</div></div>
+  <div class="phase" id="tmPhase"></div>
+  <div style="width:100%;max-width:320px"><button class="btn" id="tmGo">START</button><button class="btn alt" id="tmClose">CLOSE</button></div>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<g id="ankh"><ellipse cx="32" cy="18" rx="10" ry="13" fill="none" stroke="#e2be6e" stroke-width="5"/><rect x="29.5" y="30" width="5" height="28" fill="#e2be6e"/><rect x="17" y="35" width="30" height="5" fill="#e2be6e"/></g>
+<g id="horus"><path d="M4 36 C20 14 44 14 60 36 C44 54 20 54 4 36Z" fill="none" stroke="#e2be6e" stroke-width="3"/><circle cx="32" cy="35" r="9" fill="#2a5aa8" stroke="#e2be6e" stroke-width="2.5"/><circle cx="32" cy="35" r="3.5" fill="#000"/><path d="M32 44 C32 56 22 58 18 52" fill="none" stroke="#e2be6e" stroke-width="3" stroke-linecap="round"/><path d="M10 28 C22 16 42 16 54 28" fill="none" stroke="#e2be6e" stroke-width="4" stroke-linecap="round"/></g>
+</defs></svg>
+
+<script>
+/* ---------- CONTENT ---------- */
+const MODULES=[
+{id:'queen',ic:'♛',title:'The Queen Within',sub:'Queen Self-Esteem Technique',mins:12,
+ intro:"Before any technique, there is presence. Historians describe Cleopatra's power as voice, intelligence and magnetism, not a perfect face. This first scroll rebuilds the one thing every other ritual depends on: the way you feel inside your own skin.",
+ steps:[
+  ['The Mirror Ritual','Stand in front of a mirror, shoulders back, chin level. Name three things you appreciate about your body today and say them out loud. Focus on how it feels and what it does for you, not on how it looks.'],
+  ['Silence the Critic','Write the sentence your inner critic repeats most. Next to it, write the Queen\'s version: the same situation, spoken by someone who respects you. Read the Queen\'s version aloud.'],
+  ['The Crown Posture','Lengthen your spine as if a crown rests on your head. Breathe in for 4 counts, out for 6, five times. Notice how your shoulders and jaw soften.'],
+  ['Adorn Yourself','Choose one thing that makes you feel regal today: a fragrance, a piece of jewelry, a fabric against the skin. It is for you first.'],
+  ['Enter the Room','Walk into the next room slowly, as if it were waiting for you. Pace, posture and a calm smile say more than words.']],
+ tips:['Candlelight or soft light is a choice, not a hiding place. You decide the atmosphere.','Confidence is practiced, not found. Repeat the Mirror Ritual for 7 days.','Comparison is a thief of presence. Bring your attention back to sensation and breath.'],
+ timer:{title:'MIRROR RITUAL',phases:[[60,'Breathe. Stand tall. Soft eyes on yourself.'],[60,'Say three things you appreciate about yourself, out loud.'],[60,'Smile slowly. Say: "I am the one he cannot ignore."']]},
+ reflect:'What do I feel in my body when I stand like a queen?'},
+
+{id:'mind',ic:'☥',title:"His Mind, Decoded",sub:'Attention, novelty and desire',mins:10,
+ intro:"Long relationships are wonderful and predictable, and predictability puts attention to sleep. This scroll explains, in simple terms, what keeps attraction alive, so every ritual that follows lands with meaning.",
+ steps:[
+  ['Spot the Autopilot','List three routines you both repeat without thinking (evenings, weekends, greetings). Autopilot is where desire quietly fades.'],
+  ['One Small Surprise a Day','A new perfume, a note in his pocket, a different place for dinner. Novelty is attention\'s favorite food.'],
+  ['Build Anticipation','Send one playful message at midday that gives him something to look forward to tonight. Anticipation is half the pleasure.'],
+  ['Appreciate Specifically','Tell him one precise thing you admire about him. Feeling seen and admired deepens bonding more than generic compliments.'],
+  ['Be the Chase and the Haven','Mix playfulness and mystery with warmth and safety. He should feel excited and at home with you at once.'],
+  ['Ask, Then Listen','Ask what excites him and what he misses. Listening is one of the most attractive things a woman can do.']],
+ tips:['Research links novelty with dopamine and affectionate touch with oxytocin. You do not need a lab: you only need to be present and playful.','Every person is different. Use these ideas as invitations, then follow his reactions and your own comfort.','Stress, health and workload also affect desire. A kind, open conversation helps most.'],
+ reflect:'Which routine can I gently break this week?'},
+
+{id:'aphrodite',ic:'♀',title:"Aphrodite's Ride",sub:'The ritual of the leading goddess',mins:15,
+ intro:"In the temples of Hathor, pleasure was sacred and the woman was the one who led. Aphrodite's Ride is a ritual of leadership in intimacy: you choose the tempo, the gaze and the pace, and your partner follows your rhythm. It is built on consent, communication and enjoyment for both of you.",
+ steps:[
+  ['Set the Temple','Privacy, soft light, a playlist around 60 to 70 beats per minute. Talk first: agree on what feels good and how either of you can pause.'],
+  ['Begin With the Eyes','Hold his gaze for a few slow breaths and match your breathing to his. Connection first, movement second.'],
+  ['Lead the Rhythm','Start slow with gentle, rolling hip movements. Change tempo gradually so he cannot predict you. You set the pace.'],
+  ['Use Your Voice','Breathe audibly, whisper what you enjoy and ask what he enjoys. Words and sounds are powerful signals.'],
+  ['Master the Pause','Stillness is a tool. A short pause with a smile and eye contact builds more tension than constant motion.'],
+  ['Close With Aftercare','Stay close afterwards: a few minutes of holding, slow breathing and kind words. Closeness turns a moment into a bond.']],
+ tips:['Comfort first. If anything is uncomfortable, change position or slow down. Never push through pain.','Adapt to your body and his. There is no single correct way, only what feels good for both.','Practice the hip movements alone first (see the Hypnotic Hips bonus) to feel confident.'],
+ reflect:'What did I enjoy about leading? What do I want to try next time?'},
+
+{id:'medusa',ic:'✧',title:'The Medusa Touch',sub:'Slow, hypnotic touch on three zones',mins:15,
+ intro:"Medusa froze men with a glance. Here you do the opposite: you melt tension with slow, deliberate touch. The three zones below are known for sensitivity and relaxation. Attention and slowness are the secret.",
+ steps:[
+  ['Zone 1: The Nape','With feather-light fingertips, trace from the hairline down the back of the neck, then follow with a warm palm. Roughly one inch per second.'],
+  ['Zone 2: The Inner Arms','Glide from the inner wrist toward the elbow crease with your fingertips, barely touching the skin, then wrap with a soft squeeze of the hand.'],
+  ['Zone 3: The Spine','From the lower back, trace slowly up along the spine with one finger, then spread your palms outward. Pause at the top and breathe together.'],
+  ['Sync the Breath','Inhale as your hands lift, exhale as they land. Let him close his eyes and simply receive.'],
+  ['Ask and Adjust','Whisper: "Lighter or firmer?" Feedback turns technique into connection.']],
+ tips:['Warm hands and a warm room matter. Cold touch breaks the spell.','Spend about 3 minutes per zone. Slowness is what makes it hypnotic.','If you use oil, choose a body-safe one and check for allergies first.'],
+ timer:{title:'MEDUSA TOUCH',phases:[[180,'Zone 1: the nape of the neck. Feather-light, one inch per second.'],[180,'Zone 2: the inner arms. Wrist to elbow, barely touching.'],[180,'Zone 3: along the spine. Slow, then palms outward.']]},
+ reflect:'Which zone brought the strongest reaction? How did his breathing change?'},
+
+{id:'marilyn',ic:'✿',title:'The Marilyn Technique',sub:'Allure, voice and the slow reveal',mins:12,
+ intro:"Icons from Cleopatra to old Hollywood share one habit: they are never in a hurry. Allure is built from voice, gaze, pace and a little mystery. The more present and playful you are, the more your relationship becomes the place he wants to come back to.",
+ steps:[
+  ['The Voice','Lower your pitch slightly, slow down and pause before the important word. Practice reading a sentence aloud three ways and keep the warmest.'],
+  ['The Gaze','Hold eye contact for about three seconds, look away softly, then return. It is a conversation without words.'],
+  ['The Pace','Never rush: not your walk, not your replies, not your smile. Unhurried people look confident.'],
+  ['The Slow Reveal','Leave something unsaid. Share a hint of the plan for tonight and keep the rest as a surprise.'],
+  ['The Signature','Choose one fragrance as your signature. Scent is strongly tied to memory, and he will associate it with you.'],
+  ['The Light Touch','A hand on his shoulder, a finger along his collar while you talk. Small contact, big signal.']],
+ tips:['Playful beats serious. Smile with your eyes.','Be consistent: allure is a daily habit, not a one-night show.','Warmth is the foundation. Mystery works best on top of real affection.'],
+ reflect:'Which of the six elements feels most natural to me? Which will I practice?'},
+
+{id:'distance',ic:'✉',title:'Long-Distance Temptation',sub:'Be on his mind even when you are apart',mins:12,
+ intro:"Desire grows in the spaces between meetings. Long-Distance Temptation is the art of anticipation: the right message, the right voice note, the right hint, so he thinks of you before the day is over.",
+ steps:[
+  ['The 3-Day Anticipation Arc','Day 1: a sweet, curious message. Day 2: a playful hint. Day 3: a voice note with your warmest tone. Then see him with the story already building.'],
+  ['The Voice Note','Record in a quiet room, smile as you speak and lower your pitch slightly. 20 to 40 seconds is plenty.'],
+  ['The Teasing Question','Ask something that makes him imagine: "If we had one free evening, what would you plan?"'],
+  ['The Tasteful Photo','Soft light, a flattering angle, an outfit that makes you feel great, a knowing smile. Suggestion is stronger than showing everything.'],
+  ['Close the Loop','End the arc with a clear plan to meet: "I have something in mind for Friday."']],
+ tips:['Message examples: "I caught myself smiling at nothing today. Guess who was in my thoughts." / "Tonight I\'m wearing the perfume you like. That\'s all I\'ll tell you."','Privacy first: only share personal photos with a partner you trust, and never anything you would not be comfortable seeing become public.','Use these ideas only with a willing partner, and respect his boundaries and yours.'],
+ reflect:'What message will I send tomorrow, and how do I want him to feel reading it?'},
+];
+const BONUS=[
+{id:'tantric',ic:'❂',title:'Bonus 1: Tantric Massage Experience',sub:'Breath, presence and slow touch',mins:20,
+ intro:"Tantra teaches that presence is the greatest aphrodisiac. This guided massage ritual builds closeness through breath, slow strokes and full attention, relaxing for both of you.",
+ steps:[
+  ['Create the Space','Warm room, soft light, a towel, body-safe oil. Phones away. Agree on what is welcome and what is off limits.'],
+  ['Breathe Together','Sit facing each other for one minute. Inhale and exhale at the same pace, hands resting on each other\'s hands.'],
+  ['Long Glides','With warm oiled palms, glide slowly from the lower back up to the shoulders and back. Five slow passes.'],
+  ['Circles and Fingertips','Make wide circles over the shoulders and lower back, then switch to feather-light fingertips along the arms and legs.'],
+  ['The Pause and Hold','Rest both palms on his lower back for ten seconds. Pause is when he feels the most.'],
+  ['Switch and Share','Swap roles or finish with a long hug. Talk about what felt best.']],
+ tips:['Slow is the whole technique. If you think it is too slow, slow down a little more.','Stop immediately if anything causes discomfort.'],
+ timer:{title:'TANTRIC MASSAGE',phases:[[60,'Breathe together, hands joined.'],[240,'Long glides, lower back to shoulders.'],[240,'Circles, then feather-light fingertips.'],[60,'Pause and hold. Palms on his lower back.']]}},
+{id:'pelvic',ic:'◎',title:'Bonus 2: Pelvic Floor Training',sub:'Strength, control and body awareness',mins:10,
+ intro:"A strong, responsive pelvic floor supports bladder control, core stability and body awareness, and many women notice more sensation and confidence. This is a gentle daily routine.",
+ steps:[
+  ['Find the Muscles','While seated, imagine stopping the flow of urine and holding back gas at the same time. The gentle lift you feel inside is your pelvic floor. (Only use the urine-stop test once, to identify the muscle. Do not practice mid-stream.)'],
+  ['Slow Holds','Lift and hold for 5 seconds, then release fully for 5 seconds. Repeat 10 times. Breathe normally.'],
+  ['Quick Flicks','Contract and release rapidly 10 times, then rest.'],
+  ['The Elevator','Lift in three stages, hold, then lower in three stages. Control matters more than force.'],
+  ['Make It a Habit','Do the full routine once or twice a day: waiting in line, driving, or in bed.']],
+ tips:['Do not squeeze your buttocks, thighs or hold your breath.','If you feel pain or have bladder concerns, consult a pelvic floor physiotherapist or your doctor. This is general wellness information, not medical advice.']},
+{id:'hips',ic:'∞',title:'Bonus 3: The Hypnotic Hips Method',sub:'Move your hips like a goddess',mins:12,
+ intro:"Fluid hips are confidence you can see. This routine is a simple, joyful dance practice that builds rhythm, flexibility and ease in your body.",
+ steps:[
+  ['Warm Up','Feet hip-width apart, soft knees. Rock your weight side to side for 30 seconds.'],
+  ['The Hip Circle','Draw slow circles with your hips. Eight to the right, eight to the left.'],
+  ['The Figure 8','Trace a figure 8 with your hips. Add a gentle sway of the shoulders.'],
+  ['The Hip Drop','Push one hip out to the side, then switch with a soft bounce in the knees.'],
+  ['The Wave','Roll from the chest through the belly down to the hips like a wave. Slow, smooth and sensual.'],
+  ['Free Flow','Put on your favorite song and combine everything. Smile. Enjoy yourself.']],
+ tips:['Practice in front of a mirror, then without it.','Go at your own pace and stay within what feels comfortable. Stretch afterwards.'],
+ timer:{title:'HYPNOTIC HIPS',phases:[[30,'Warm up. Rock side to side.'],[60,'Hip circles. Slow and wide.'],[60,'Figure 8. Add the shoulders.'],[60,'Hip drops. Soft knees.'],[60,'The wave. Chest to belly to hips.'],[120,'Free flow. Your song, your rhythm.']]}}
+];
+const CHALLENGE=[
+['Day 1: The Queen\'s Mirror','Do the Mirror Ritual from "The Queen Within".'],
+['Day 2: The Surprise','Give him one small surprise (note, gesture, or new detail) without explaining it.'],
+['Day 3: The Slow Touch','Practice the Medusa Touch on one zone for 3 minutes, with his consent.'],
+['Day 4: Voice and Gaze','Use the slow voice and the 3-second gaze in an everyday conversation.'],
+['Day 5: Anticipation','Send the midday message and the evening voice note.'],
+['Day 6: The Goddess Leads','Set the temple, lead the rhythm and finish with aftercare.'],
+['Day 7: The Queen\'s Night','Combine your favorite parts. Afterwards, write about it in your Journal.']];
+const ALL=[...MODULES,...BONUS];
+
+/* ---------- STATE ---------- */
+const K='cleo_v1';
+let S={done:{},days:{},journal:[]};
+try{S=Object.assign(S,JSON.parse(localStorage.getItem(K)||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let tab='home';
+
+/* ---------- RENDER ---------- */
+const NAV=[['home','☥','HOME'],['rituals','♛','RITUALS'],['bonus','❂','BONUSES'],['challenge','✧','7 DAYS'],['journal','✎','JOURNAL'],['help','?','HELP']];
+function drawNav(){ $('#nav').innerHTML=NAV.map(n=>`<button class="${tab===n[0]?'on':''}" onclick="go('${n[0]}')"><b>${n[1]}</b>${n[2]}</button>`).join('') }
+function go(t){tab=t;location.hash=t;render();window.scrollTo(0,0)}
+function pct(){return Math.round(ALL.filter(m=>S.done[m.id]).length/ALL.length*100)}
+function cardOf(m){return `<button class="card ${S.done[m.id]?'done':''}" onclick="openMod('${m.id}')"><div class="ic">${m.ic}</div><div><div class="tt">${esc(m.title)}</div><div class="sb">${esc(m.sub)}</div><div style="margin-top:6px"><span class="pill">${m.mins} MIN</span>${m.timer?'<span class="pill">GUIDED TIMER</span>':''}</div></div><div class="chk">${S.done[m.id]?'✓':''}</div></button>`}
+function render(){
+  drawNav(); const a=$('#app'); $('#back').style.display='none';
+  if(tab==='home'){
+    const dd=Object.values(S.days).filter(Boolean).length;
+    a.innerHTML=`<div class="hero"><svg class="eye" viewBox="0 0 64 64"><use href="#horus"/></svg><h1>Welcome, Queen</h1><p>You now hold the full Cleopatra's Trick experience: six sacred rituals, three bonuses and a 7-day awakening challenge.</p><p class="small">Open one ritual at a time. Read it, practice it, then mark it complete.</p>
+    <div class="bar"><i style="width:${pct()}%"></i></div><div class="small">${pct()}% of your journey completed · ${dd}/7 challenge days</div></div>
+    <div class="sec">Continue your journey</div>${(ALL.find(m=>!S.done[m.id])?[ALL.find(m=>!S.done[m.id])]:[]).map(cardOf).join('')||'<div class="note">You completed every ritual. Repeat any of them whenever you like.</div>'}
+    <div class="sec">Where to start</div>
+    <button class="card" onclick="go('rituals')"><div class="ic">♛</div><div><div class="tt">The 6 Sacred Rituals</div><div class="sb">Start with The Queen Within</div></div></button>
+    <button class="card" onclick="go('challenge')"><div class="ic">✧</div><div><div class="tt">7-Day Awakening Challenge</div><div class="sb">One small ritual per day</div></div></button>
+    <button class="card" onclick="go('help')"><div class="ic">?</div><div><div class="tt">Install on your phone</div><div class="sb">Add the app to your home screen</div></div></button>
+    <div class="note"><b>Consent and respect.</b> Everything here is for consenting adults and works best with open communication. Never pressure anyone, stop whenever either of you is uncomfortable, and use these practices only with a willing partner.</div>
+    <div class="foot">For adults 18+. Educational and entertainment content, not medical or therapeutic advice. Results vary from person to person.</div>`;
+  } else if(tab==='rituals'){
+    a.innerHTML=`<div class="sec">The 6 Sacred Rituals</div>`+MODULES.map(cardOf).join('');
+  } else if(tab==='bonus'){
+    a.innerHTML=`<div class="sec">Your Bonuses</div>`+BONUS.map(cardOf).join('');
+  } else if(tab==='challenge'){
+    a.innerHTML=`<div class="sec">7-Day Awakening Challenge</div><p class="small" style="margin-top:0">Tick each day when you have done it. Small and consistent beats big and rare.</p>`+CHALLENGE.map((c,i)=>`<label class="day"><input type="checkbox" ${S.days[i]?'checked':''} onchange="tickDay(${i},this.checked)"><div><b>${esc(c[0])}</b><div>${esc(c[1])}</div></div></label>`).join('')+`<div class="note">${Object.values(S.days).filter(Boolean).length===7?'You completed the challenge. Your queen energy is unmistakable.':'Keep going. Each day builds on the last.'}</div>`;
+  } else if(tab==='journal'){
+    a.innerHTML=`<div class="sec">Your Private Journal</div><p class="small" style="margin-top:0">Saved only on this device. Write what you noticed, felt and want to try next.</p><textarea id="jt" rows="5" placeholder="Today I noticed..."></textarea><button class="btn" onclick="addJ()">SAVE ENTRY</button>`+(S.journal.length?S.journal.map((e,i)=>`<div class="entry"><button onclick="delJ(${i})">delete</button><div class="d">${esc(e.d)}</div><div style="white-space:pre-wrap;margin-top:6px">${esc(e.t)}</div></div>`).join(''):'<div class="small">No entries yet.</div>');
+  } else if(tab==='help'){
+    a.innerHTML=`<div class="sec">Install the app</div>
+    <details open><summary>iPhone / iPad (Safari)</summary><ol><li>Open this page in <b>Safari</b> (not inside another app).</li><li>Tap the <b>Share</b> button (square with an arrow up).</li><li>Scroll and tap <b>Add to Home Screen</b>.</li><li>Tap <b>Add</b>. The icon appears on your home screen.</li></ol></details>
+    <details><summary>Android (Chrome)</summary><ol><li>Open this page in <b>Chrome</b>.</li><li>Tap the <b>⋮ menu</b> (top right).</li><li>Tap <b>Install app</b> or <b>Add to Home screen</b>.</li><li>Confirm with <b>Install</b>.</li></ol></details>
+    <details><summary>Computer (Chrome / Edge)</summary><p>Click the install icon at the right end of the address bar, then <b>Install</b>.</p></details>
+    <details><summary>Using the guided timers</summary><p>Some rituals include a guided timer. Tap <b>START</b>, follow the on-screen phases and a soft bell marks the end of each one. Keep the screen on while you practice.</p></details>
+    <details><summary>Your progress</summary><p>Your progress and journal are stored on this device. If you switch phones or clear browser data, they will not carry over.</p></details>
+    <div class="note"><b>Support:</b> questions or trouble accessing? Write to <b>bruno.cuber2@gmail.com</b>.</div>
+    <div class="foot">Cleopatra's Trick · for adults 18+ · educational content, not medical advice</div>`;
+  }
+}
+function tickDay(i,v){S.days[i]=v;save();render()}
+function addJ(){const t=$('#jt').value.trim();if(!t)return;S.journal.unshift({d:new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}),t});save();render()}
+function delJ(i){S.journal.splice(i,1);save();render()}
+function openMod(id){
+  const m=ALL.find(x=>x.id===id); $('#back').style.display='block'; window.scrollTo(0,0);
+  $('#app').innerHTML=`<div class="hero" style="padding-bottom:20px"><div class="cz" style="font-size:38px">${m.ic}</div><h1 style="font-size:22px">${esc(m.title)}</h1><div class="small">${esc(m.sub)} · ${m.mins} min</div></div>
+  <div class="box"><p style="margin:0">${esc(m.intro)}</p></div>
+  <div class="sec">The Ritual</div><ol class="steps">${m.steps.map(s=>`<li><b>${esc(s[0])}</b>${esc(s[1])}</li>`).join('')}</ol>
+  ${m.tips?`<div class="box"><h3>Wisdom of the Scroll</h3><ul class="tips">${m.tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`:''}
+  ${m.timer?`<button class="btn" onclick="openTimer('${m.id}')">BEGIN GUIDED RITUAL</button>`:''}
+  ${m.reflect?`<div class="note"><b>Reflect:</b> ${esc(m.reflect)}</div>`:''}
+  <button class="btn ${S.done[m.id]?'done':'alt'}" onclick="toggleDone('${m.id}')">${S.done[m.id]?'✓ COMPLETED':'MARK AS COMPLETE'}</button>
+  <div class="foot">Consent, comfort and communication come first. Stop if anything is uncomfortable.</div>`;
+  $('#back').onclick=()=>{render()};
+}
+function toggleDone(id){S.done[id]=!S.done[id];save();openMod(id)}
+
+/* ---------- TIMER ---------- */
+let T=null;
+function bell(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=528;o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.0001,c.currentTime);g.gain.exponentialRampToValueAtTime(.35,c.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+2.2);o.start();o.stop(c.currentTime+2.3)}catch(e){}}
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function openTimer(id){
+  const m=ALL.find(x=>x.id===id); const ph=m.timer.phases; const total=ph.reduce((a,p)=>a+p[0],0);
+  T={ph,total,left:total,run:false,iv:null,idx:0};
+  $('#tmTitle').textContent=m.timer.title; $('#timer').classList.add('on'); paintT(); $('#tmGo').textContent='START';
+}
+function paintT(){
+  let acc=0,cur=T.ph[T.ph.length-1],idx=T.ph.length-1,el=T.total-T.left;
+  for(let i=0;i<T.ph.length;i++){acc+=T.ph[i][0];if(el<acc){cur=T.ph[i];idx=i;break}}
+  $('#tmTime').textContent=fmt(T.left); $('#tmPhase').textContent=T.left===0?'Ritual complete. Breathe, smile and be proud of yourself.':cur[1];
+  $('#tmArc').style.strokeDashoffset=282.7*(1-T.left/T.total); return idx;
+}
+$('#tmGo').onclick=()=>{
+  if(!T)return;
+  if(T.left===0){T.left=T.total;T.idx=0}
+  if(T.run){clearInterval(T.iv);T.run=false;$('#tmGo').textContent='RESUME';return}
+  T.run=true;$('#tmGo').textContent='PAUSE';bell();
+  T.iv=setInterval(()=>{T.left--;const i=paintT();if(i!==T.idx||T.left===0){T.idx=i;bell()}if(T.left<=0){clearInterval(T.iv);T.run=false;$('#tmGo').textContent='RESTART'}},1000);
+};
+$('#tmClose').onclick=()=>{if(T&&T.iv)clearInterval(T.iv);T=null;$('#timer').classList.remove('on')};
+
+/* ---------- INIT ---------- */
+const h=location.hash.replace('#','');if(NAV.some(n=>n[0]===h))tab=h;
+render();
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
